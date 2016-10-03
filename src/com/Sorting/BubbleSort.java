@@ -3,6 +3,7 @@ package com.Sorting;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -28,6 +29,10 @@ public class BubbleSort {
             final ArrayList<Integer> input = Util.GenerateRandomInput(size);
             BubbleSort(input);
             Assert.assertTrue(Util.VerifyIsSorted(input));
+
+            final ArrayList<Integer> inputWithRepeatNumbers = Util.GenerateRandomInputWithRepeatedNumbers(size, size);
+            BubbleSort(inputWithRepeatNumbers);
+            Assert.assertTrue(Util.VerifyIsSorted(inputWithRepeatNumbers));
         }
     }
 }

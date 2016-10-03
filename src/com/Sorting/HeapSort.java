@@ -53,6 +53,10 @@ public class HeapSort {
             final ArrayList<Integer> input = Util.GenerateRandomInput(size);
             HeapSort(input);
             Assert.assertTrue(Util.VerifyIsSorted(input));
+
+            final ArrayList<Integer> inputWithRepeatNumbers = Util.GenerateRandomInputWithRepeatedNumbers(size, size);
+            HeapSort(inputWithRepeatNumbers);
+            Assert.assertTrue(Util.VerifyIsSorted(inputWithRepeatNumbers));
         }
     }
 }

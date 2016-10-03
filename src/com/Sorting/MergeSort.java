@@ -55,6 +55,10 @@ public class MergeSort {
             final ArrayList<Integer> input = Util.GenerateRandomInput(size);
             MergeSort(input);
             Assert.assertTrue(Util.VerifyIsSorted(input));
+
+            final ArrayList<Integer> inputWithRepeatNumbers = Util.GenerateRandomInputWithRepeatedNumbers(size, size);
+            MergeSort(inputWithRepeatNumbers);
+            Assert.assertTrue(Util.VerifyIsSorted(inputWithRepeatNumbers));
         }
     }
 }

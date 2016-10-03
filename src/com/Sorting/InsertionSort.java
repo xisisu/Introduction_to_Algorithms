@@ -29,6 +29,10 @@ public class InsertionSort {
             final ArrayList<Integer> input = Util.GenerateRandomInput(size);
             InsertionSort(input);
             Assert.assertTrue(Util.VerifyIsSorted(input));
+
+            final ArrayList<Integer> inputWithRepeatNumbers = Util.GenerateRandomInputWithRepeatedNumbers(size, size);
+            InsertionSort(inputWithRepeatNumbers);
+            Assert.assertTrue(Util.VerifyIsSorted(inputWithRepeatNumbers));
         }
     }
 }

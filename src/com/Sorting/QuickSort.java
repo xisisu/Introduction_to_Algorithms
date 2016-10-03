@@ -48,6 +48,10 @@ public class QuickSort {
             final ArrayList<Integer> input = Util.GenerateRandomInput(size);
             QuickSort(input);
             Assert.assertTrue(Util.VerifyIsSorted(input));
+
+            final ArrayList<Integer> inputWithRepeatNumbers = Util.GenerateRandomInputWithRepeatedNumbers(size, size);
+            QuickSort(inputWithRepeatNumbers);
+            Assert.assertTrue(Util.VerifyIsSorted(inputWithRepeatNumbers));
         }
     }
 }

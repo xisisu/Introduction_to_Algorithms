@@ -2,6 +2,7 @@ package com.Sorting;
 
 import org.junit.Test;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
@@ -14,9 +15,27 @@ public class Util {
      * return random input from 1 - n, in ArrayList format
      */
     public static ArrayList<Integer> GenerateRandomInput(final int n) {
-        final Random random = new Random();
         final ArrayList<Integer> result = new ArrayList<>();
         for (int i = 0; i < n; ++i) { result.add(i+1); }
+        Collections.shuffle(result);
+        return result;
+    }
+
+    /**
+     * upperBound is not inclusive
+     */
+    public static ArrayList<Integer> GenerateRandomInputWithRepeatedNumbers(final int size, final int upperBound) {
+        final Random random = new Random();
+        final ArrayList<Integer> result = new ArrayList<>();
+        for (int i = 0; i < size; ++i) { result.add(random.nextInt(upperBound)); }
+        Collections.shuffle(result);
+        return result;
+    }
+
+    public static ArrayList<Integer> GenerateRandomInputWithRepeatedNumbers(final int size) {
+        final Random random = new Random();
+        final ArrayList<Integer> result = new ArrayList<>();
+        for (int i = 0; i < size; ++i) { result.add(random.nextInt()); }
         Collections.shuffle(result);
         return result;
     }
