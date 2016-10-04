@@ -14,7 +14,7 @@ public class CoinStreaks {
      * @param n
      * @return
      */
-    public int LongestStreaks(final int n) {
+    public int longestStreaks(final int n) {
         final Random random = new Random();
         int res = 0, pre = -1, count = 0;
         for (int i = 0; i < n; ++i) {
@@ -33,7 +33,7 @@ public class CoinStreaks {
         for (int i = 1; i < n; ++i) {
             int sum = 0;
             for (int j = 0; j < count; ++j) {
-                sum += LongestStreaks(i);
+                sum += longestStreaks(i);
             }
             System.out.println(i + " coins, average longest streaks is " + (double)sum / count);
         }

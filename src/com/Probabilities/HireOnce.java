@@ -16,7 +16,7 @@ public class HireOnce {
      * @param n number of candidates
      * @return hired candidate rank
      */
-    public int HireOnce(final int n) {
+    public int hireOnce(final int n) {
         if (n <= 1) { return n; }
         final Double EULER_NUMBER = 2.71828;
 
@@ -44,7 +44,7 @@ public class HireOnce {
         final int n = 1000;
 
         for (int i = 0; i < count; ++i) {
-            sum += HireOnce(n);
+            sum += hireOnce(n);
         }
 
         System.out.println("Candidate pool size: " + n + ", average rank of hires: " + sum / count);

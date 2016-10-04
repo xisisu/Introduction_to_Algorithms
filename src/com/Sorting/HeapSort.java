@@ -10,53 +10,53 @@ import java.util.Collections;
  * Created by Sisu on 10/2/2016.
  */
 public class HeapSort {
-    private int LeftChild(final int i) { return 2 * i + 1; }
-    private int RightChild(final int i) { return 2 * i + 2; }
+    private int leftChild(final int i) { return 2 * i + 1; }
+    private int rightChild(final int i) { return 2 * i + 2; }
 
     /**
      * assume idx is within input, and each child is a heap.
      * Now maintain the input[idx] into the heap
      */
-    private void MaxHeapify(final ArrayList<Integer> input, final int idx, final int heapSize) {
+    private void maxHeapify(final ArrayList<Integer> input, final int idx, final int heapSize) {
         if (idx >= input.size() || idx < 0) { return; }
-        int left = LeftChild(idx);
-        int right = RightChild(idx);
+        int left = leftChild(idx);
+        int right = rightChild(idx);
         int maxValueIdx = idx;
         if (left <= heapSize && input.get(left) > input.get(maxValueIdx)) { maxValueIdx = left; }
         if (right <= heapSize && input.get(right) > input.get(maxValueIdx)) { maxValueIdx = right; }
         if (maxValueIdx != idx) {
             Collections.swap(input, idx, maxValueIdx);
-            MaxHeapify(input, maxValueIdx, heapSize);
+            maxHeapify(input, maxValueIdx, heapSize);
         }
     }
 
-    private void BuildMaxHeap(final ArrayList<Integer> input) {
+    private void buildMaxHeap(final ArrayList<Integer> input) {
         for (int i = (input.size()-1) / 2; i >= 0; --i) {
-            MaxHeapify(input, i, input.size()-1);
+            maxHeapify(input, i, input.size()-1);
         }
     }
 
-    public void HeapSort(final ArrayList<Integer> input) {
-        BuildMaxHeap(input);
+    public void heapSort(final ArrayList<Integer> input) {
+        buildMaxHeap(input);
         int heapSize = input.size()-1;
         for (int i = input.size()-1; i >= 1; i--) {
             Collections.swap(input, 0, i);
-            MaxHeapify(input, 0, --heapSize);
+            maxHeapify(input, 0, --heapSize);
         }
     }
 
     @Test
-    public void Test() {
+    public void test() {
         final int count = 1000;
         final int size = 1000;
         for (int i = 0; i < count; ++i) {
-            final ArrayList<Integer> input = Util.GenerateRandomInput(size);
-            HeapSort(input);
-            Assert.assertTrue(Util.VerifyIsSorted(input));
+            final ArrayList<Integer> input = Util.generateRandomInput(size);
+            heapSort(input);
+            Assert.assertTrue(Util.verifyIsSorted(input));
 
-            final ArrayList<Integer> inputWithRepeatNumbers = Util.GenerateRandomInputWithRepeatedNumbers(size, size);
-            HeapSort(inputWithRepeatNumbers);
-            Assert.assertTrue(Util.VerifyIsSorted(inputWithRepeatNumbers));
+            final ArrayList<Integer> inputWithRepeatNumbers = Util.generateRandomInputWithRepeatedNumbers(size, size);
+            heapSort(inputWithRepeatNumbers);
+            Assert.assertTrue(Util.verifyIsSorted(inputWithRepeatNumbers));
         }
     }
 }

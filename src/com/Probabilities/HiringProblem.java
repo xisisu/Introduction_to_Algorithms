@@ -3,9 +3,7 @@ package com.Probabilities;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
-import java.util.List;
 
 /**
  * Created by Sisu on 10/2/2016.
@@ -19,7 +17,7 @@ public class HiringProblem {
      * @param n total number of candidates
      * @return number of hires
      */
-    public int NumberOfHires(final int n) {
+    public int numberOfHires(final int n) {
         if (n <= 1) { return n; }
 
         // create input, random its abilities
@@ -46,7 +44,7 @@ public class HiringProblem {
         final int n = 10000;
 
         for (int i = 0; i < count; ++i) {
-            sum += NumberOfHires(n);
+            sum += numberOfHires(n);
         }
 
         System.out.println("Candidate pool size: " + n + ", average number of hires: " + (double)sum / count + ", expect: " + Math.log(n));

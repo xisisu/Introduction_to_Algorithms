@@ -15,7 +15,7 @@ public class BallsAndBins {
      * @param bins
      * @return
      */
-    public long NumberOfBalls(final int bins) {
+    public long numberOfBalls(final int bins) {
         final HashSet<Integer> binSets = new HashSet<>();
         final Random random = new Random();
         long count = 0;
@@ -34,7 +34,7 @@ public class BallsAndBins {
         for (int i = 1; i < n; ++i) {
             long sum = 0;
             for (int j = 0; j < count; ++j) {
-                sum += NumberOfBalls(i);
+                sum += numberOfBalls(i);
             }
             System.out.println(i + " bins, need an average of " + (double)sum / count + " balls to fill all. expect: " + (i + (double)i * Math.log(i)));
         }

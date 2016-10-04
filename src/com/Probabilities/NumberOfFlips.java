@@ -13,7 +13,7 @@ public class NumberOfFlips {
      * @param n
      * @return
      */
-    public long NumberOfFlipsUntil(final int n) {
+    public long numberOfFlipsUntil(final int n) {
         if (n <= 1) { return n; }
 
         final Random random = new Random();
@@ -38,7 +38,7 @@ public class NumberOfFlips {
         for (int i = 1; i < n; ++i) {
             int sum = 0;
             for (int j = 0; j < count; ++j) {
-                sum += NumberOfFlipsUntil(i);
+                sum += numberOfFlipsUntil(i);
             }
             System.out.println(i + " consecutive coins, average flip is " + (double)sum / count);
         }
