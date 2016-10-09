@@ -55,6 +55,16 @@ public class DoubleLinkedList {
         System.out.println(" NULL. ");
     }
 
+    public void prettyPrintReverse() {
+        Node cur = _sentinel.getPrev();
+        System.out.print("NULL ");
+        while (cur != _sentinel) {
+            System.out.print(" <-- " + cur.getVal());
+            cur = cur.getPrev();
+        }
+        System.out.println("");
+    }
+
     private class Node {
         Node _prev;
         Node _next;
@@ -82,6 +92,7 @@ public class DoubleLinkedList {
         for (int i = 0; i < 10; ++i) {
             list.insertVal(i);
             list.prettyPrint();
+            list.prettyPrintReverse();
         }
 
         System.out.println("Test exist");
@@ -93,6 +104,7 @@ public class DoubleLinkedList {
         for (int i = 0; i < 10; ++i) {
             list.deleteVal(i);
             list.prettyPrint();
+            list.prettyPrintReverse();
         }
     }
 }
