@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 /**
  * Created by Sisu on 10/2/2016.
@@ -17,7 +18,7 @@ public class HeapSort {
      * assume idx is within input, and each child is a heap.
      * Now maintain the input[idx] into the heap
      */
-    private void maxHeapify(final ArrayList<Integer> input, final int idx, final int heapSize) {
+    private void maxHeapify(final List<Integer> input, final int idx, final int heapSize) {
         if (idx >= input.size() || idx < 0) { return; }
         int left = leftChild(idx);
         int right = rightChild(idx);
@@ -30,13 +31,13 @@ public class HeapSort {
         }
     }
 
-    private void buildMaxHeap(final ArrayList<Integer> input) {
+    private void buildMaxHeap(final List<Integer> input) {
         for (int i = (input.size()-1) / 2; i >= 0; --i) {
             maxHeapify(input, i, input.size()-1);
         }
     }
 
-    public void heapSort(final ArrayList<Integer> input) {
+    public void heapSort(final List<Integer> input) {
         buildMaxHeap(input);
         int heapSize = input.size()-1;
         for (int i = input.size()-1; i >= 1; i--) {
@@ -50,11 +51,11 @@ public class HeapSort {
         final int count = 1000;
         final int size = 1000;
         for (int i = 0; i < count; ++i) {
-            final ArrayList<Integer> input = Util.generateRandomInput(size);
+            final List<Integer> input = Util.generateRandomInput(size);
             heapSort(input);
             Assert.assertTrue(Util.verifyIsSorted(input));
 
-            final ArrayList<Integer> inputWithRepeatNumbers = Util.generateRandomInputWithRepeatedNumbers(size, size);
+            final List<Integer> inputWithRepeatNumbers = Util.generateRandomInputWithRepeatedNumbers(size, size);
             heapSort(inputWithRepeatNumbers);
             Assert.assertTrue(Util.verifyIsSorted(inputWithRepeatNumbers));
         }

@@ -4,12 +4,13 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Sisu on 10/2/2016.
  */
 public class FindMinAndMax {
-    public ArrayList<Integer> findMinAndMax(final ArrayList<Integer> input) {
+    public List<Integer> findMinAndMax(final List<Integer> input) {
         if (input.size() <= 1) { return input; }
         int min = Integer.min(input.get(0), input.get(1));
         int max = Integer.max(input.get(0), input.get(1));
@@ -33,8 +34,8 @@ public class FindMinAndMax {
         final int count = 1000;
         final int size = 1000;
         for (int i = 0; i < count; ++i) {
-            final ArrayList<Integer> input = Util.generateRandomInput(size); // from [1, size]
-            final ArrayList<Integer> result = findMinAndMax(input);
+            final List<Integer> input = Util.generateRandomInput(size); // from [1, size]
+            final List<Integer> result = findMinAndMax(input);
             Assert.assertEquals(result.size(), 2);
             Assert.assertEquals(result.get(0), Integer.valueOf(1));
             Assert.assertEquals(result.get(1), Integer.valueOf(size));

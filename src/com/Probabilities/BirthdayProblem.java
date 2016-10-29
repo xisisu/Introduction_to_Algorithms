@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.util.HashSet;
 import java.util.Random;
+import java.util.Set;
 
 /**
  * Created by Sisu on 10/2/2016.
@@ -17,7 +18,7 @@ public class BirthdayProblem {
      */
     public boolean sameBirthday(final int n) {
         if (n <= 1) { return false; }
-        final HashSet<Integer> birthDay = new HashSet<>();
+        final Set<Integer> birthDay = new HashSet<>();
         final Random random = new Random();
         for (int i = 0; i < n; ++i) {
             int cur = random.nextInt(365);

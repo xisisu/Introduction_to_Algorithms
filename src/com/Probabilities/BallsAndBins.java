@@ -3,6 +3,7 @@ package com.Probabilities;
 import org.junit.Test;
 
 import java.util.HashSet;
+import java.util.Set;
 import java.util.Random;
 
 /**
@@ -16,7 +17,7 @@ public class BallsAndBins {
      * @return
      */
     public long numberOfBalls(final int bins) {
-        final HashSet<Integer> binSets = new HashSet<>();
+        final Set<Integer> binSets = new HashSet<>();
         final Random random = new Random();
         long count = 0;
         while (binSets.size() < bins) {

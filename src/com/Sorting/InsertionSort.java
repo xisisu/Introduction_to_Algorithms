@@ -4,12 +4,13 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Sisu on 10/2/2016.
  */
 public class InsertionSort {
-    public void insertionSort(final ArrayList<Integer> input) {
+    public void insertionSort(final List<Integer> input) {
         for (int i = 1; i < input.size(); ++i) {
             final Integer key = input.get(i);
             int j = i-1;
@@ -26,11 +27,11 @@ public class InsertionSort {
         final int count = 1000;
         final int size = 1000;
         for (int i = 0; i < count; ++i) {
-            final ArrayList<Integer> input = Util.generateRandomInput(size);
+            final List<Integer> input = Util.generateRandomInput(size);
             insertionSort(input);
             Assert.assertTrue(Util.verifyIsSorted(input));
 
-            final ArrayList<Integer> inputWithRepeatNumbers = Util.generateRandomInputWithRepeatedNumbers(size, size);
+            final List<Integer> inputWithRepeatNumbers = Util.generateRandomInputWithRepeatedNumbers(size, size);
             insertionSort(inputWithRepeatNumbers);
             Assert.assertTrue(Util.verifyIsSorted(inputWithRepeatNumbers));
         }

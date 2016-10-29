@@ -4,12 +4,13 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Sisu on 10/2/2016.
  */
 public class CountingSort {
-    public void countingSort(final ArrayList<Integer> input, final int upperBound) {
+    public void countingSort(final List<Integer> input, final int upperBound) {
         final int[] count = new int[upperBound];
         for (int i = 0; i < count.length; ++i) { count[i] = 0; }
         for (final Integer v : input) { ++count[v]; }
@@ -31,7 +32,7 @@ public class CountingSort {
         final int count = 1000;
         final int size = 1000;
         for (int i = 0; i < count; ++i) {
-            final ArrayList<Integer> inputWithRepeatNumbers = Util.generateRandomInputWithRepeatedNumbers(size, size);
+            final List<Integer> inputWithRepeatNumbers = Util.generateRandomInputWithRepeatedNumbers(size, size);
             countingSort(inputWithRepeatNumbers, size);
             Assert.assertTrue(Util.verifyIsSorted(inputWithRepeatNumbers));
         }

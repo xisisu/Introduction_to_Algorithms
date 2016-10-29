@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -13,7 +14,7 @@ public class Util {
     /**
      * return random input from 1 - n, in ArrayList format
      */
-    public static ArrayList<Integer> generateRandomInput(final int n) {
+    public static List<Integer> generateRandomInput(final int n) {
         final ArrayList<Integer> result = new ArrayList<>();
         for (int i = 0; i < n; ++i) { result.add(i+1); }
         Collections.shuffle(result);
@@ -23,7 +24,7 @@ public class Util {
     /**
      * upperBound is not inclusive
      */
-    public static ArrayList<Integer> generateRandomInputWithRepeatedNumbers(final int size, final int upperBound) {
+    public static List<Integer> generateRandomInputWithRepeatedNumbers(final int size, final int upperBound) {
         final Random random = new Random();
         final ArrayList<Integer> result = new ArrayList<>();
         for (int i = 0; i < size; ++i) { result.add(random.nextInt(upperBound)); }
@@ -31,7 +32,7 @@ public class Util {
         return result;
     }
 
-    public static ArrayList<Integer> generateRandomInputWithRepeatedNumbers(final int size) {
+    public static List<Integer> generateRandomInputWithRepeatedNumbers(final int size) {
         final Random random = new Random();
         final ArrayList<Integer> result = new ArrayList<>();
         for (int i = 0; i < size; ++i) { result.add(random.nextInt()); }
@@ -39,14 +40,14 @@ public class Util {
         return result;
     }
 
-    public static boolean verifyIsSorted(final ArrayList<Integer> input) {
+    public static boolean verifyIsSorted(final List<Integer> input) {
         for (int i = 1; i < input.size(); ++i) { if (input.get(i) < input.get(i-1)) { return false; } }
         return true;
     }
 
     @Test
     public void test() {
-        final ArrayList<Integer> result = generateRandomInput(100);
+        final List<Integer> result = generateRandomInput(100);
         for (int i = 0; i < result.size(); ++i) {
             System.out.println(result.get(i) + ", ");
         }

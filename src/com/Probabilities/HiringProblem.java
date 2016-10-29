@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 /**
  * Created by Sisu on 10/2/2016.
@@ -21,7 +22,7 @@ public class HiringProblem {
         if (n <= 1) { return n; }
 
         // create input, random its abilities
-        ArrayList<Integer> candidates = new ArrayList<>();
+        List<Integer> candidates = new ArrayList<>();
         for (int i = 0; i < n; ++i) { candidates.add(i+1); }
         Collections.shuffle(candidates);
 

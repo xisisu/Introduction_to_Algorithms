@@ -4,12 +4,13 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Sisu on 10/2/2016.
  */
 public class MergeSort {
-    private void combine(final ArrayList<Integer> input, final int s1, final int e1, final int s2, final int e2) {
+    private void combine(final List<Integer> input, final int s1, final int e1, final int s2, final int e2) {
         final ArrayList<Integer> temp = new ArrayList<>();
         int idx1 = s1, idx2 = s2;
         while (idx1 <= e1 && idx2 <= e2) {
@@ -34,7 +35,7 @@ public class MergeSort {
     /**
      * merge sort for [start, end], inclusive
      */
-    private void mergeSort(final ArrayList<Integer> input, final int start, final int end) {
+    private void mergeSort(final List<Integer> input, final int start, final int end) {
         if (start >= end) { return; }
         int mid = start + (end-start)/2;
         mergeSort(input, start, mid);
@@ -43,7 +44,7 @@ public class MergeSort {
     }
 
 
-    public void mergeSort(final ArrayList<Integer> input) {
+    public void mergeSort(final List<Integer> input) {
         mergeSort(input, 0, input.size()-1);
     }
 
@@ -52,11 +53,11 @@ public class MergeSort {
         final int count = 1000;
         final int size = 1000;
         for (int i = 0; i < count; ++i) {
-            final ArrayList<Integer> input = Util.generateRandomInput(size);
+            final List<Integer> input = Util.generateRandomInput(size);
             mergeSort(input);
             Assert.assertTrue(Util.verifyIsSorted(input));
 
-            final ArrayList<Integer> inputWithRepeatNumbers = Util.generateRandomInputWithRepeatedNumbers(size, size);
+            final List<Integer> inputWithRepeatNumbers = Util.generateRandomInputWithRepeatedNumbers(size, size);
             mergeSort(inputWithRepeatNumbers);
             Assert.assertTrue(Util.verifyIsSorted(inputWithRepeatNumbers));
         }
