@@ -97,7 +97,7 @@ public class BinarySearchTree {
     @Test public void testInsert() {
         final Integer testSize = 100;
         final BinarySearchTree tree = new BinarySearchTree();
-        final ArrayList<Integer> data = generateRandomInput(testSize);
+        final List<Integer> data = generateRandomInput(testSize);
         int i = 1;
         for (final Integer val : data) {
             tree.insert(val);
@@ -112,7 +112,7 @@ public class BinarySearchTree {
     @Test public void testExists() {
         final Integer testSize = 100;
         final BinarySearchTree tree = new BinarySearchTree();
-        final ArrayList<Integer> data = generateRandomInput(testSize);
+        final List<Integer> data = generateRandomInput(testSize);
         for (final Integer val : data) { tree.insert(val); }
         System.out.println("input: " + data);
         System.out.println(tree);
@@ -196,7 +196,7 @@ public class BinarySearchTree {
 
     @Test public void testParent() {
         final BinarySearchTree tree = new BinarySearchTree();
-        final ArrayList<Integer> data = generateRandomInput(10);
+        final List<Integer> data = generateRandomInput(10);
         for (final Integer val : data) { tree.insert(val); }
 
         System.out.println("input: " + data);

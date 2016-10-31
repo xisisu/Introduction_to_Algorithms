@@ -5,36 +5,36 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Created by Sisu on 10/9/2016.
+ * Created by xisisu on 10/30/16.
  */
-public class BinarySearchTreeUtil {
-    public static void preOrderPrintTree(final BinarySearchTreeNode node) {
+public class RedBlackTreeUtil {
+    public static void preOrderPrintTree(final RedBlackTreeNode node) {
         if (node == null) { System.out.print("# "); return; }
         System.out.print(node.getVal() + " ");
         preOrderPrintTree(node.getLeft());
         preOrderPrintTree(node.getRight());
     }
 
-    public static void inOrderPrintTree(final BinarySearchTreeNode node) {
+    public static void inOrderPrintTree(final RedBlackTreeNode node) {
         if (node == null) { System.out.print("# "); return; }
         inOrderPrintTree(node.getLeft());
         System.out.print(node.getVal() + " ");
         inOrderPrintTree(node.getRight());
     }
 
-    public static void postOrderPrintTree(final BinarySearchTreeNode node) {
+    public static void postOrderPrintTree(final RedBlackTreeNode node) {
         if (node == null) { System.out.print("# "); return; }
         postOrderPrintTree(node.getLeft());
         postOrderPrintTree(node.getRight());
         System.out.print(node.getVal() + " ");
     }
 
-    public static int getNodeSize(final BinarySearchTreeNode node) {
+    public static int getNodeSize(final RedBlackTreeNode node) {
         if (node == null) { return 0; }
         return 1 + getNodeSize(node.getLeft()) + getNodeSize(node.getRight());
     }
 
-    public static boolean validateTree(final BinarySearchTreeNode node) {
+    public static boolean validateTree(final RedBlackTreeNode node) {
         if (node == null) { return true; }
         if (node.getLeft() != null) {
             if (node.getLeft().getParent() != node) { return false; }
@@ -50,25 +50,25 @@ public class BinarySearchTreeUtil {
         return validateTree(node.getLeft()) && validateTree(node.getRight());
     }
 
-    private static BinarySearchTreeNode minimun(final BinarySearchTreeNode node) {
+    private static RedBlackTreeNode minimun(final RedBlackTreeNode node) {
         if (node == null) { return null; }
-        BinarySearchTreeNode cur = node;
+        RedBlackTreeNode cur = node;
         while (cur.getLeft() != null) { cur = cur.getLeft(); }
         return cur;
     }
 
-    private static BinarySearchTreeNode maximum(final BinarySearchTreeNode node) {
+    private static RedBlackTreeNode maximum(final RedBlackTreeNode node) {
         if (node == null) { return null; }
-        BinarySearchTreeNode cur = node;
+        RedBlackTreeNode cur = node;
         while (cur.getRight() != null) { cur = cur.getRight(); }
         return cur;
     }
 
-    public static BinarySearchTreeNode treeNodeSuccessor(final BinarySearchTreeNode node) {
+    public static RedBlackTreeNode treeNodeSuccessor(final RedBlackTreeNode node) {
         if (node == null) { return null; }
-        BinarySearchTreeNode cur = node;
+        RedBlackTreeNode cur = node;
         if (cur.getRight() != null) { return minimun(cur.getRight()); }
-        BinarySearchTreeNode parent = cur.getParent();
+        RedBlackTreeNode parent = cur.getParent();
         while (parent != null && parent.getRight() == cur) {
             cur = parent;
             parent = cur.getParent();
@@ -76,11 +76,11 @@ public class BinarySearchTreeUtil {
         return parent;
     }
 
-    public static BinarySearchTreeNode treeNodePredecessor(final BinarySearchTreeNode node) {
+    public static RedBlackTreeNode treeNodePredecessor(final RedBlackTreeNode node) {
         if (node == null) { return null; }
-        BinarySearchTreeNode cur = node;
+        RedBlackTreeNode cur = node;
         if (cur.getLeft() != null) { return maximum(cur.getLeft()); }
-        BinarySearchTreeNode parent = cur.getParent();
+        RedBlackTreeNode parent = cur.getParent();
         while (parent != null && parent.getLeft() == cur) {
             cur = parent;
             parent = cur.getParent();
@@ -93,5 +93,13 @@ public class BinarySearchTreeUtil {
         for (int i = 0; i < size; ++i) { result.add(i+1); }
         Collections.shuffle(result);
         return result;
+    }
+
+    public static boolean isLeftChild(final RedBlackTreeNode node) {
+        return node != null && node.getParent() != null && node.getParent().getLeft() == node;
+    }
+
+    public static boolean isRightChild(final RedBlackTreeNode node) {
+        return node != null && node.getParent() != null && node.getParent().getRight() == node;
     }
 }
