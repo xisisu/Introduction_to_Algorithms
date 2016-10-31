@@ -3,7 +3,6 @@ package com.Sorting;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -28,7 +27,9 @@ public class RadixSort {
             --count[idx];
         }
         input.clear();
-        for (int i = 0; i < result.length; ++i) { input.add(result[i]); }
+        for (int aResult : result) {
+            input.add(aResult);
+        }
     }
 
     public void radixSort(final List<Integer> input, final int upperBound) {

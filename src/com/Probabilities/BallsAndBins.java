@@ -13,8 +13,6 @@ public class BallsAndBins {
     /**
      * given number of bins, return number of balls to let each bin contains at least 1 ball
      * answer: n*ln(n) + n
-     * @param bins
-     * @return
      */
     public long numberOfBalls(final int bins) {
         final Set<Integer> binSets = new HashSet<>();

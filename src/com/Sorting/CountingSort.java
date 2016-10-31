@@ -3,7 +3,6 @@ package com.Sorting;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -24,7 +23,9 @@ public class CountingSort {
             --count[input.get(i)];
         }
         input.clear();
-        for (int i = 0; i < result.length; ++i) { input.add(result[i]); }
+        for (int val : result) {
+            input.add(val);
+        }
     }
 
     @Test

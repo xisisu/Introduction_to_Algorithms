@@ -10,8 +10,6 @@ import java.util.Random;
 public class NumberOfFlips {
     /**
      * return number of flips until n connective coins appears
-     * @param n
-     * @return
      */
     public long numberOfFlipsUntil(final int n) {
         if (n <= 1) { return n; }

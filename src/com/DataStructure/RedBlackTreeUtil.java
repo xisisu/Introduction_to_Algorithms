@@ -50,7 +50,7 @@ public class RedBlackTreeUtil {
         return validateTree(node.getLeft()) && validateTree(node.getRight());
     }
 
-    private static RedBlackTreeNode minimun(final RedBlackTreeNode node) {
+    private static RedBlackTreeNode minimum(final RedBlackTreeNode node) {
         if (node == null) { return null; }
         RedBlackTreeNode cur = node;
         while (cur.getLeft() != null) { cur = cur.getLeft(); }
@@ -67,7 +67,7 @@ public class RedBlackTreeUtil {
     public static RedBlackTreeNode treeNodeSuccessor(final RedBlackTreeNode node) {
         if (node == null) { return null; }
         RedBlackTreeNode cur = node;
-        if (cur.getRight() != null) { return minimun(cur.getRight()); }
+        if (cur.getRight() != null) { return minimum(cur.getRight()); }
         RedBlackTreeNode parent = cur.getParent();
         while (parent != null && parent.getRight() == cur) {
             cur = parent;

@@ -2,9 +2,7 @@ package com.DataStructure;
 
 import org.junit.Test;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -113,7 +111,7 @@ public class BinarySearchTree {
         final Integer testSize = 100;
         final BinarySearchTree tree = new BinarySearchTree();
         final List<Integer> data = generateRandomInput(testSize);
-        for (final Integer val : data) { tree.insert(val); }
+        data.forEach(tree::insert);
         System.out.println("input: " + data);
         System.out.println(tree);
 
@@ -129,7 +127,7 @@ public class BinarySearchTree {
         for (int i = 1; i <= testSize; ++i) { data.add(i); }
 
         final BinarySearchTree tree = new BinarySearchTree();
-        for (final Integer val : data) { tree.insert(val); }
+        data.forEach(tree::insert);
         System.out.println(tree);
 
         int i = testSize;
@@ -147,7 +145,7 @@ public class BinarySearchTree {
         for (int i = testSize; i >= 1; --i) { data.add(i); }
 
         final BinarySearchTree tree = new BinarySearchTree();
-        for (final Integer val : data) { tree.insert(val); }
+        data.forEach(tree::insert);
         System.out.println(tree);
 
         int i = testSize;
@@ -164,7 +162,7 @@ public class BinarySearchTree {
         final List<Integer> data = new ArrayList<>();
         for (int i = testSize; i >= 1; --i) { data.add(i); }
         BinarySearchTree tree = new BinarySearchTree();
-        for (final Integer val : data) { tree.insert(val); }
+        data.forEach(tree::insert);
         System.out.println(tree);
 
         Collections.shuffle(data);
@@ -181,7 +179,7 @@ public class BinarySearchTree {
         final Integer testSize = 1000;
         final BinarySearchTree tree = new BinarySearchTree();
         final List<Integer> data = generateRandomInput(testSize);
-        for (final Integer val : data) { tree.insert(val); }
+        data.forEach(tree::insert);
         System.out.println(tree);
 
         Collections.shuffle(data);
@@ -197,7 +195,7 @@ public class BinarySearchTree {
     @Test public void testParent() {
         final BinarySearchTree tree = new BinarySearchTree();
         final List<Integer> data = generateRandomInput(10);
-        for (final Integer val : data) { tree.insert(val); }
+        data.forEach(tree::insert);
 
         System.out.println("input: " + data);
         System.out.println(tree);
@@ -207,5 +205,5 @@ public class BinarySearchTree {
             System.out.println("Find " + i + ", " + cur);
         }
     }
-};
+}
 

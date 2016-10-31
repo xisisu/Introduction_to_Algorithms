@@ -11,8 +11,6 @@ public class CoinStreaks {
     /**
      * flip the coin n times, return the longest streak of consecutive
      * answer: ln(n)
-     * @param n
-     * @return
      */
     public int longestStreaks(final int n) {
         final Random random = new Random();

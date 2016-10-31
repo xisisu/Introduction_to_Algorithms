@@ -16,7 +16,7 @@ import static com.DataStructure.RedBlackTreeUtil.*;
  * 2. The root is black
  * 3. Every leaf (NIL) is black
  * 4. If a node is red, then both its children are black
- * 5. For each node, all paths from the node to decendant leaves contain the same number of black nodes
+ * 5. For each node, all paths from the node to decedent leaves contain the same number of black nodes
  */
 public class RedBlackTree {
     private RedBlackTreeNode _root;
@@ -162,7 +162,7 @@ public class RedBlackTree {
     @Test public void testRotateRoot() {
         final RedBlackTree tree = new RedBlackTree();
         final List<Integer> data = Arrays.asList(5,3,7,6,8);
-        for (final Integer val : data) { tree.insert(val); }
+        data.forEach(tree::insert);
         System.out.println("input: " + data);
         System.out.println(tree);
 
@@ -180,7 +180,7 @@ public class RedBlackTree {
     @Test public void testRotate() {
         final RedBlackTree tree = new RedBlackTree();
         final List<Integer> data = Arrays.asList(1,5,3,7,6,8);
-        for (final Integer val : data) { tree.insert(val); }
+        data.forEach(tree::insert);
         System.out.println("input: " + data);
         System.out.println(tree);
 

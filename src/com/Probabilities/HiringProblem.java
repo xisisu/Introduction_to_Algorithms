@@ -28,9 +28,9 @@ public class HiringProblem {
 
         Integer cur = Integer.MIN_VALUE;
         int hire = 0;
-        for (int i = 0; i < candidates.size(); ++i) {
-            if (candidates.get(i) > cur) {
-                cur = candidates.get(i);
+        for (final Integer candidate : candidates) {
+            if (candidate > cur) {
+                cur = candidate;
                 ++hire;
             }
         }

@@ -50,7 +50,7 @@ public class BinarySearchTreeUtil {
         return validateTree(node.getLeft()) && validateTree(node.getRight());
     }
 
-    private static BinarySearchTreeNode minimun(final BinarySearchTreeNode node) {
+    private static BinarySearchTreeNode minimum(final BinarySearchTreeNode node) {
         if (node == null) { return null; }
         BinarySearchTreeNode cur = node;
         while (cur.getLeft() != null) { cur = cur.getLeft(); }
@@ -67,7 +67,7 @@ public class BinarySearchTreeUtil {
     public static BinarySearchTreeNode treeNodeSuccessor(final BinarySearchTreeNode node) {
         if (node == null) { return null; }
         BinarySearchTreeNode cur = node;
-        if (cur.getRight() != null) { return minimun(cur.getRight()); }
+        if (cur.getRight() != null) { return minimum(cur.getRight()); }
         BinarySearchTreeNode parent = cur.getParent();
         while (parent != null && parent.getRight() == cur) {
             cur = parent;

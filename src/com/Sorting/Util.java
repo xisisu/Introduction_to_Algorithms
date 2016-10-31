@@ -1,7 +1,5 @@
 package com.Sorting;
 
-import org.junit.Test;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -43,13 +41,5 @@ public class Util {
     public static boolean verifyIsSorted(final List<Integer> input) {
         for (int i = 1; i < input.size(); ++i) { if (input.get(i) < input.get(i-1)) { return false; } }
         return true;
-    }
-
-    @Test
-    public void test() {
-        final List<Integer> result = generateRandomInput(100);
-        for (int i = 0; i < result.size(); ++i) {
-            System.out.println(result.get(i) + ", ");
-        }
     }
 }
