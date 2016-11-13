@@ -25,8 +25,8 @@ public class HashTableOpenAddressing<T> {
     public List getDeleted() { return _deleted; }
 
     public HashTableOpenAddressing() {
-        _buckets = new ArrayList<T>(Collections.nCopies(INIT_CAPACITY, null));
-        _deleted = new ArrayList<Boolean>(Collections.nCopies(INIT_CAPACITY, false));
+        _buckets = new ArrayList<>(Collections.nCopies(INIT_CAPACITY, null));
+        _deleted = new ArrayList<>(Collections.nCopies(INIT_CAPACITY, false));
     }
 
     private boolean insertObjIntoBuckets(final T obj, final List<T> buckets) {
@@ -93,9 +93,9 @@ public class HashTableOpenAddressing<T> {
 
     private void doubleSizeAndRehash() {
         final Integer newSize = _buckets.size() * 2;
-        _deleted = new ArrayList<Boolean>(Collections.nCopies(newSize, false));
+        _deleted = new ArrayList<>(Collections.nCopies(newSize, false));
 
-        final List<T> newBuckets = new ArrayList<T>(Collections.nCopies(newSize, null));
+        final List<T> newBuckets = new ArrayList<>(Collections.nCopies(newSize, null));
         for (final T o : _buckets) {
             if (o == null) { continue; }
             insertObjIntoBuckets(o, newBuckets);
@@ -105,9 +105,9 @@ public class HashTableOpenAddressing<T> {
 
     private void shrinkSizeAndRehash() {
         final Integer newSize = _buckets.size() / 2;
-        _deleted = new ArrayList<Boolean>(Collections.nCopies(newSize, false));
+        _deleted = new ArrayList<>(Collections.nCopies(newSize, false));
 
-        final List<T> newBuckets = new ArrayList<T>(Collections.nCopies(newSize, null));
+        final List<T> newBuckets = new ArrayList<>(Collections.nCopies(newSize, null));
         for (final T o : _buckets) {
             if (o == null) { continue; }
             insertObjIntoBuckets(o, newBuckets);

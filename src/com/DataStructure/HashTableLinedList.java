@@ -25,7 +25,7 @@ public class HashTableLinedList<T> {
     public HashTableLinedList() {
         _buckets = new ArrayList<>(INIT_CAPACITY);
         for (int i = 0; i < INIT_CAPACITY; ++i) {
-            _buckets.add(new ArrayList<T>());
+            _buckets.add(new ArrayList<>());
         }
     }
 
@@ -72,7 +72,7 @@ public class HashTableLinedList<T> {
         final Integer newSize = _buckets.size() * 2;
         final List<List<T>> newBuckets = new ArrayList<>(newSize);
         for (int i = 0; i < newSize; ++i) {
-            newBuckets.add(new ArrayList<T>());
+            newBuckets.add(new ArrayList<>());
         }
 
         for (final List lst : _buckets) {
@@ -88,7 +88,7 @@ public class HashTableLinedList<T> {
         final Integer newSize = _buckets.size() / 2;
         final List<List<T>> newBuckets = new ArrayList<>(newSize);
         for (int i = 0; i < newSize; ++i) {
-            newBuckets.add(new ArrayList<T>());
+            newBuckets.add(new ArrayList<>());
         }
 
         for (final List lst : _buckets) {
