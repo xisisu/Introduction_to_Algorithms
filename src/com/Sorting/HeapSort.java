@@ -30,12 +30,19 @@ public class HeapSort {
         }
     }
 
+    /**
+     * since we calculates its child, thus starts from (input.size()-1)/2 is enough
+     */
     private void buildMaxHeap(final List<Integer> input) {
         for (int i = (input.size()-1) / 2; i >= 0; --i) {
             maxHeapify(input, i, input.size()-1);
         }
     }
 
+    /**
+     * populates largest number into the end, swap end number to the root
+     * then apply heapify
+     */
     public void heapSort(final List<Integer> input) {
         buildMaxHeap(input);
         int heapSize = input.size()-1;

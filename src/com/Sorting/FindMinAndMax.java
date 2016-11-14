@@ -32,7 +32,7 @@ public class FindMinAndMax {
     @Test
     public void test() {
         final int count = 1000;
-        final int size = 1000;
+        final int size = 99;
         for (int i = 0; i < count; ++i) {
             final List<Integer> input = Util.generateRandomInput(size); // from [1, size]
             final List<Integer> result = findMinAndMax(input);
