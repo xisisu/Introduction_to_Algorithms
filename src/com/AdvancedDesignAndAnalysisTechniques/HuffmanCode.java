@@ -116,8 +116,7 @@ public class HuffmanCode {
         }
     }
 
-    @Test
-    public void test() {
+    @Test public void test() {
         // example in 16.5
         final String words = "fffffeeeeeeeeeccccccccccccbbbbbbbbbbbbbddddddddddddddddaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
         final Map<Character, String> result = huffmanCode(words);
@@ -127,5 +126,11 @@ public class HuffmanCode {
         Assert.assertEquals(result.get('d'), "111");
         Assert.assertEquals(result.get('e'), "1101");
         Assert.assertEquals(result.get('f'), "1100");
+    }
+
+    @Test public void testFibonacci() {
+        final String words = "abccdddeeeeeffffffffggggggggggggghhhhhhhhhhhhhhhhhhhh";
+        final Map<Character, String> result = huffmanCode(words);
+        System.out.println(result);
     }
 }
