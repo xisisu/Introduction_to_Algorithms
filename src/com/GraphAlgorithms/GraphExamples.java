@@ -81,7 +81,7 @@ public class GraphExamples {
         return g;
     }
 
-    public static GraphInterface comstructStronglyConnectedComponents2() {
+    public static GraphInterface constructStronglyConnectedComponents2() {
         final GraphInterface g = new GraphAdjacencyList(5);
         g.addDirectedEdge(1,5);
         g.addDirectedEdge(5,2);

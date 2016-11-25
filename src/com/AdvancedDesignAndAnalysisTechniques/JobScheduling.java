@@ -17,7 +17,7 @@ public class JobScheduling {
             @Override
             public int compare(Job j1, Job j2) {
                 return j1.getEnd() > j2.getEnd() ? 1 :
-                        j1.getEnd() < j2.getEnd() ? -1 : 0;
+                       j1.getEnd() < j2.getEnd() ? -1 : 0;
             }
         });
 

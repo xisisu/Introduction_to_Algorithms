@@ -2,16 +2,11 @@ package com.GraphAlgorithms;
 
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 import java.util.Stack;
 
-import static com.GraphAlgorithms.GraphDFS.DFS;
-import static com.GraphAlgorithms.GraphExamples.comstructStronglyConnectedComponents2;
+import static com.GraphAlgorithms.GraphExamples.constructStronglyConnectedComponents2;
 import static com.GraphAlgorithms.GraphExamples.constructStronglyConnectedComponents;
 
 /**
@@ -82,7 +77,7 @@ public class StronglyConnectedComponents {
 
     @Test
     public void test2() {
-        final GraphInterface g = comstructStronglyConnectedComponents2();
+        final GraphInterface g = constructStronglyConnectedComponents2();
         stronglyConnectedComponents(g);
     }
 }

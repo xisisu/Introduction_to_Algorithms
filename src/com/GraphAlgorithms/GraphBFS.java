@@ -13,7 +13,7 @@ import static com.GraphAlgorithms.GraphExamples.constructExampleGraph1;
  * Created by xisisu on 16-11-24.
  */
 public class GraphBFS {
-    enum BFSColor { WHITE, BLACK, GRAY; }
+    enum BFSColor { WHITE, BLACK, GRAY }
 
     public static void BFS(final GraphInterface g, final Integer source) {
         class Record {
