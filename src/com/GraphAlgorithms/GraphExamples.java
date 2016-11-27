@@ -1,5 +1,7 @@
 package com.GraphAlgorithms;
 
+import java.util.Set;
+
 /**
  * Created by xisisu on 16-11-24.
  */
@@ -88,6 +90,28 @@ public class GraphExamples {
         g.addDirectedEdge(2,1);
         g.addDirectedEdge(5,3);
         g.addDirectedEdge(3,4);
+        return g;
+    }
+
+    /**
+     * Fig 23.4
+     */
+    public static GraphInterface constructMSTExample() {
+        final GraphInterface g = new GraphAdjacencyList(9);
+        g.addUndirectedEdgeWithWeight(1,2,4);
+        g.addUndirectedEdgeWithWeight(1,8,8);
+        g.addUndirectedEdgeWithWeight(2,3,8);
+        g.addUndirectedEdgeWithWeight(2,8,11);
+        g.addUndirectedEdgeWithWeight(3,9,2);
+        g.addUndirectedEdgeWithWeight(3,4,7);
+        g.addUndirectedEdgeWithWeight(3,6,4);
+        g.addUndirectedEdgeWithWeight(4,5,9);
+        g.addUndirectedEdgeWithWeight(4,6,14);
+        g.addUndirectedEdgeWithWeight(5,6,10);
+        g.addUndirectedEdgeWithWeight(6,7,2);
+        g.addUndirectedEdgeWithWeight(7,8,1);
+        g.addUndirectedEdgeWithWeight(7,9,6);
+        g.addUndirectedEdgeWithWeight(8,9,7);
         return g;
     }
 }

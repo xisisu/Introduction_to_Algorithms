@@ -10,8 +10,9 @@ import java.util.Set;
  * Created by xisisu on 16-11-24.
  */
 public class GraphAdjacencyList implements GraphInterface {
-    private final Map<Integer, Set<Integer>> _nodes = new HashMap<>();
+    private final Map<Integer, Set<WeightedNode>> _nodes = new HashMap<>();
 
+    // we ignore node 0 here
     public GraphAdjacencyList(final int V) {
         for (int i = 1; i <= V; ++i) {
             _nodes.put(i, new HashSet<>());
@@ -19,19 +20,37 @@ public class GraphAdjacencyList implements GraphInterface {
     }
 
     @Override
+    public void addUndirectedEdgeWithWeight(Integer i, Integer j, Integer weight) {
+        addDirectedEdgeWithWeight(i, j, weight);
+        addDirectedEdgeWithWeight(j, i, weight);
+    }
+
+    @Override
+    public void addDirectedEdgeWithWeight(Integer from, Integer to, Integer weight) {
+        _nodes.get(from).add(new WeightedNode(to, weight));
+    }
+
+    @Override
     public void addUndirectedEdge(final Integer i, final Integer j) {
-        addDirectedEdge(i, j);
-        addDirectedEdge(j, i);
+        addUndirectedEdgeWithWeight(i, j, 1);
     }
 
     @Override
     public void addDirectedEdge(Integer i, Integer j) {
-        _nodes.get(i).add(j);
+        addDirectedEdgeWithWeight(i, j, 1);
     }
-
 
     @Override
     public Set<Integer> getAdjacencyNodes(final Integer i) {
+        final Set<Integer> result = new HashSet<>();
+        for (final WeightedNode n : _nodes.get(i)) {
+            result.add(n._node);
+        }
+        return result;
+    }
+
+    @Override
+    public Set<WeightedNode> getAdjacencyNodesWithWeight(Integer i) {
         return _nodes.get(i);
     }
 
