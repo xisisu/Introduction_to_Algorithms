@@ -114,4 +114,52 @@ public class GraphExamples {
         g.addUndirectedEdgeWithWeight(8,9,7);
         return g;
     }
+
+    /**
+     * Fig 24.4
+     */
+    public static GraphInterface constructSingleSourceShortestPath() {
+        final GraphInterface g = new GraphAdjacencyList(5);
+        g.addDirectedEdgeWithWeight(1,2,6);
+        g.addDirectedEdgeWithWeight(1,3,7);
+        g.addDirectedEdgeWithWeight(2,3,8);
+        g.addDirectedEdgeWithWeight(2,4,5);
+        g.addDirectedEdgeWithWeight(2,5,-4);
+        g.addDirectedEdgeWithWeight(3,4,-3);
+        g.addDirectedEdgeWithWeight(3,5,9);
+        g.addDirectedEdgeWithWeight(4,2,-2);
+        g.addDirectedEdgeWithWeight(1,2,6);
+        g.addDirectedEdgeWithWeight(1,2,6);
+        g.addDirectedEdgeWithWeight(1,2,6);
+        g.addDirectedEdgeWithWeight(1,2,6);
+        g.addDirectedEdgeWithWeight(1,2,6);
+        g.addDirectedEdgeWithWeight(1,2,6);
+        g.addDirectedEdgeWithWeight(1,2,6);
+        return g;
+    }
+
+    /**
+     * Fig 24.6
+     */
+    public static GraphInterface constructSingleSourceShortestPathNonNegative() {
+        final GraphInterface g = new GraphAdjacencyList(5);
+        g.addDirectedEdgeWithWeight(1,2,10);
+        g.addDirectedEdgeWithWeight(1,4,5);
+        g.addDirectedEdgeWithWeight(2,3,1);
+        g.addDirectedEdgeWithWeight(2,4,2);
+        g.addDirectedEdgeWithWeight(3,5,4);
+        g.addDirectedEdgeWithWeight(4,2,3);
+        g.addDirectedEdgeWithWeight(4,5,2);
+        g.addDirectedEdgeWithWeight(4,3,9);
+        g.addDirectedEdgeWithWeight(5,1,7);
+        g.addDirectedEdgeWithWeight(5,3,6);
+        g.addDirectedEdgeWithWeight(1,2,10);
+        g.addDirectedEdgeWithWeight(1,2,10);
+        g.addDirectedEdgeWithWeight(1,2,10);
+        g.addDirectedEdgeWithWeight(1,2,10);
+        g.addDirectedEdgeWithWeight(1,2,10);
+        g.addDirectedEdgeWithWeight(1,2,10);
+
+        return g;
+    }
 }
