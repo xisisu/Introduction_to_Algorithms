@@ -1,16 +1,10 @@
 package com.GraphAlgorithms;
 
-import org.testng.annotations.Test;
+import org.junit.Test;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.PriorityQueue;
-import java.util.Set;
+import java.util.*;
 
-import static com.GraphAlgorithms.GraphExamples.constructDirectedExampleGraph3;
-import static com.GraphAlgorithms.GraphExamples.constructSingleSourceShortestPath;
-import static com.GraphAlgorithms.GraphExamples.constructSingleSourceShortestPathNonNegative;
+import static com.GraphAlgorithms.GraphExamples.*;
 import static com.GraphAlgorithms.TopologicalSort.topologicalSort;
 import static org.junit.Assert.assertEquals;
 

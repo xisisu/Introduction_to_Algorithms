@@ -1,7 +1,8 @@
 package com.AdvancedDesignAndAnalysisTechniques;
 
-import org.testng.Assert;
-import org.testng.annotations.Test;
+
+import org.junit.Assert;
+import org.junit.Test;
 
 /**
  * Dynamic programming, two dimensional array to record temp results
@@ -48,7 +49,8 @@ public class LongestCommonSequence {
         return result.reverse().toString();
     }
 
-    @Test public void test() {
+    @Test
+    public void test() {
         final String s1 = "ACCGGTCGAGTGCGCGGAAGCCGGCCGAA";
         final String s2 = "GTCGTTCGGAATGCCGTTGCTCTGTAAA";
         Assert.assertEquals("GTCGTCGGAAGCCGGCCGAA", longestCommonSequence(s1, s2));

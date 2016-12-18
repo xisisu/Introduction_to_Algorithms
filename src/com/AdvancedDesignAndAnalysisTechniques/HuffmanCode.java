@@ -1,9 +1,12 @@
 package com.AdvancedDesignAndAnalysisTechniques;
 
+import org.junit.Assert;
 import org.junit.Test;
-import org.testng.Assert;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.PriorityQueue;
+import java.util.Stack;
 
 /**
  * Greedy algorithm, huffman code

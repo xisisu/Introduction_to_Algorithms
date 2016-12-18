@@ -1,7 +1,7 @@
 package com.AdvancedDesignAndAnalysisTechniques;
 
+import org.junit.Assert;
 import org.junit.Test;
-import org.testng.Assert;
 
 import java.util.*;
 
@@ -13,12 +13,12 @@ import java.util.*;
 public class JobScheduling {
     public List<Job> jobScheduling(final List<Job> jobs) {
         // sort jobs by finish time
-        Collections.sort(jobs, new Comparator<>() {
-            @Override
-            public int compare(Job j1, Job j2) {
-                return j1.getEnd() > j2.getEnd() ? 1 :
-                       j1.getEnd() < j2.getEnd() ? -1 : 0;
-            }
+        Collections.sort(jobs, (o1, o2) -> {
+            Job j1 = (Job)o1;
+            Job j2 = (Job)o2;
+
+            return j1.getEnd() > j2.getEnd() ? 1 :
+                   j1.getEnd() < j2.getEnd() ? -1 : 0;
         });
 
         List<Job> result = new ArrayList<>();

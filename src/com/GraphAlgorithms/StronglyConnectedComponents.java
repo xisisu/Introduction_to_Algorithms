@@ -1,13 +1,13 @@
 package com.GraphAlgorithms;
 
-import org.testng.annotations.Test;
+import org.junit.Test;
 
 import java.util.HashSet;
 import java.util.Set;
 import java.util.Stack;
 
-import static com.GraphAlgorithms.GraphExamples.constructStronglyConnectedComponents2;
 import static com.GraphAlgorithms.GraphExamples.constructStronglyConnectedComponents;
+import static com.GraphAlgorithms.GraphExamples.constructStronglyConnectedComponents2;
 
 /**
  * Created by xisisu on 16-11-24.
