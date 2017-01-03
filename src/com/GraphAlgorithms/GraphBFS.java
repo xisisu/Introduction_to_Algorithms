@@ -10,6 +10,7 @@ import java.util.Queue;
 import static com.GraphAlgorithms.GraphExamples.constructExampleGraph1;
 
 /**
+ * Also see: http://www.geeksforgeeks.org/breadth-first-traversal-for-a-graph/
  * Created by xisisu on 16-11-24.
  */
 public class GraphBFS {
@@ -35,7 +36,7 @@ public class GraphBFS {
         final Map<Integer, Record> nodeMap = new HashMap<>();
         for (final Integer n : g.getNodes()) {
             nodeMap.put(n, n.equals(source) ?
-                    new Record(BFSColor.GRAY , 0                , null) :
+                    new Record(BFSColor.GRAY, 0, null) :
                     new Record(BFSColor.WHITE, Integer.MAX_VALUE, null));
         }
 
@@ -45,7 +46,7 @@ public class GraphBFS {
         while (!queue.isEmpty()) {
             final Integer cur = queue.poll();
             for (final Integer n : g.getAdjacencyNodes(cur)) {
-                if (nodeMap.containsKey(n) && nodeMap.get(n)._color.equals(BFSColor.WHITE)) {
+                if (nodeMap.get(n)._color.equals(BFSColor.WHITE)) {
                     nodeMap.get(n)._color = BFSColor.GRAY;
                     nodeMap.get(n)._distance = nodeMap.get(cur)._distance + 1;
                     nodeMap.get(n)._predecessor = cur;
