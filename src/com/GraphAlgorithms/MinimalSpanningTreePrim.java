@@ -10,6 +10,8 @@ import java.util.Set;
 import static com.GraphAlgorithms.GraphExamples.constructMSTExample;
 
 /**
+ * See also: http://www.geeksforgeeks.org/greedy-algorithms-set-5-prims-minimum-spanning-tree-mst-2/
+ *
  * Created by xisisu on 16-11-27.
  */
 public class MinimalSpanningTreePrim {

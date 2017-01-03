@@ -7,6 +7,8 @@ import java.util.Collections;
 import java.util.List;
 
 /**
+ * Also see: http://quiz.geeksforgeeks.org/quick-sort/
+ *
  * Created by Sisu on 10/2/2016.
  */
 public class QuickSort {

@@ -6,6 +6,8 @@ import org.junit.Test;
 import java.util.List;
 
 /**
+ * See also: http://quiz.geeksforgeeks.org/insertion-sort/
+ *
  * Created by Sisu on 10/2/2016.
  */
 public class InsertionSort {

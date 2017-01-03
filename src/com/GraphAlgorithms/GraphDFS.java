@@ -12,6 +12,8 @@ import static com.GraphAlgorithms.GraphExamples.constructExampleGraph1;
 import static org.junit.Assert.assertEquals;
 
 /**
+ * Also see: http://www.geeksforgeeks.org/depth-first-traversal-for-a-graph/
+ * Note the graph does not necessarily be connected. So iterate through all nodes.
  * Created by xisisu on 16-11-24.
  */
 public class GraphDFS {
@@ -19,9 +21,9 @@ public class GraphDFS {
             , final GraphInterface g
             , final Integer node)
     {
-        if (result.contains(node)) { return; }
         result.add(node);
         for (final Integer n : g.getAdjacencyNodes(node)) {
+            if (result.contains(node)) { continue; }
             visit(result, g, n);
         }
     }

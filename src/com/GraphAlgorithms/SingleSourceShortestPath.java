@@ -9,6 +9,9 @@ import static com.GraphAlgorithms.TopologicalSort.topologicalSort;
 import static org.junit.Assert.assertEquals;
 
 /**
+ * Also see: http://www.geeksforgeeks.org/greedy-algorithms-set-6-dijkstras-shortest-path-algorithm/
+ * http://www.geeksforgeeks.org/dynamic-programming-set-16-floyd-warshall-algorithm/
+ *
  * Created by xisisu on 16-11-27.
  */
 public class SingleSourceShortestPath {
@@ -23,7 +26,9 @@ public class SingleSourceShortestPath {
         return result;
     }
 
-    public static Map<Integer, Integer> getShortestPathFromSourceBellmanFord(final GraphInterface g, final Integer source) {
+    public static Map<Integer, Integer> getShortestPathFromSourceBellmanFord(final GraphInterface g,
+                                                                             final Integer source)
+    {
         final Map<Integer, Integer> sourceToNodeDistance = new HashMap<>();
         for (final Integer i : g.getNodes()) {
             sourceToNodeDistance.put(i, i == source ? 0 : Integer.MAX_VALUE);

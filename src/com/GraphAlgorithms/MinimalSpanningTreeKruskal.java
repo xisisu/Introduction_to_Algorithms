@@ -10,6 +10,8 @@ import java.util.PriorityQueue;
 import static com.GraphAlgorithms.GraphExamples.constructMSTExample;
 
 /**
+ * See also: http://www.geeksforgeeks.org/greedy-algorithms-set-2-kruskals-minimum-spanning-tree-mst/
+ *
  * Created by xisisu on 16-11-27.
  */
 public class MinimalSpanningTreeKruskal {
@@ -27,7 +29,6 @@ public class MinimalSpanningTreeKruskal {
         }
         return result;
     }
-
 
     /**
      * keeping selecting edges that combines two disjoints forests

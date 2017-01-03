@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Also see: http://quiz.geeksforgeeks.org/merge-sort/
+ *
  * Created by Sisu on 10/2/2016.
  */
 public class MergeSort {

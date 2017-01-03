@@ -11,6 +11,8 @@ import static com.GraphAlgorithms.GraphExamples.constructDirectedExampleGraph3;
 import static org.junit.Assert.assertEquals;
 
 /**
+ * Also see: http://www.geeksforgeeks.org/topological-sorting/
+ *
  * Created by xisisu on 16-11-24.
  */
 public class TopologicalSort {

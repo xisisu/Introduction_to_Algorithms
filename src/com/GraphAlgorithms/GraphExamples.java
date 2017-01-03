@@ -1,7 +1,5 @@
 package com.GraphAlgorithms;
 
-import java.util.Set;
-
 /**
  * Created by xisisu on 16-11-24.
  */
@@ -41,6 +39,41 @@ public class GraphExamples {
         g.addUndirectedEdge(3,4);
         g.addUndirectedEdge(3,6);
         g.addUndirectedEdge(4,5);
+        return g;
+    }
+
+    /**
+     * 1 -- 2
+     * |
+     * |       3
+     * |      /|
+     * 5 -- 4  6
+     */
+    public static GraphInterface constructDirectedGraphWithoutCycle() {
+        final GraphInterface g = new GraphAdjacencyList(6);
+        g.addUndirectedEdge(1,2);
+        g.addUndirectedEdge(1,5);
+        g.addUndirectedEdge(4,5);
+        g.addUndirectedEdge(3,4);
+        g.addUndirectedEdge(3,6);
+        return g;
+    }
+
+    /**
+     * 1 -- 2
+     * |      \
+     * |       3
+     * |      /|
+     * 5 -- 4  6
+     */
+    public static GraphInterface constructDirectedGraphWithCycle() {
+        final GraphInterface g = new GraphAdjacencyList(6);
+        g.addUndirectedEdge(1,2);
+        g.addUndirectedEdge(1,5);
+        g.addUndirectedEdge(4,5);
+        g.addUndirectedEdge(3,4);
+        g.addUndirectedEdge(3,6);
+        g.addUndirectedEdge(2,3);
         return g;
     }
 
